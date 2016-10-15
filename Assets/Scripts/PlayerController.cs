@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Networking;
 
-public class PlayerController : NetworkBehaviour {
+public class PlayerController : MonoBehaviour {
 	public PlayerMotor motor;
 	public PlayerWeapon playerweapon;
 	public HealthManager health;
@@ -37,9 +37,9 @@ public class PlayerController : NetworkBehaviour {
 	}
 		
 	void FixedUpdate() {
-		if (!isLocalPlayer){
-			return;
-		}
+//		if (!isLocalPlayer){
+//			return;
+//		}
 
 		if (isAndriod) {
 

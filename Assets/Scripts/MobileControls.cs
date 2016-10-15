@@ -12,6 +12,7 @@ public class MobileControls : Controls {
 	bool Controls.playerMovement() {
 		return Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved && Input.GetTouch(0).position.x < screenXDivide;	
 	}
+
 	Vector3[] Controls.getPlayerMovement() {
 		int touchesCount = 0;
 		// Check how many touches are valid first
