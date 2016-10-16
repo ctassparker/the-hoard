@@ -28,11 +28,6 @@
 Shader "Unlit/LandscapeShader"
 {
 
-	Properties
-	{
-		_PointLightColor ("Point Light Color", Color) = (0, 0, 0)
-		_PointLightPosition ("Point Light Position", Vector) = (0.0, 0.0, 0.0)
-	}
 	SubShader
 	{
 		Pass
@@ -50,6 +45,9 @@ Shader "Unlit/LandscapeShader"
 			uniform float _Ka;
 			uniform float _Ks;
 
+			uniform float3 _PointLightColor; 
+			uniform float3 _PointLightPosition;
+
 			struct vertIn
 			{
 				float4 vertex : POSITION;
@@ -61,9 +59,9 @@ Shader "Unlit/LandscapeShader"
 			struct vertOut
 			{
 				float4 vertex : SV_POSITION;
-				float4 worldVertex : TEXCOORD0;
+				float2 uv : TEXCOORD0;
+				float4 worldVertex : TEXCOORD1;
 				float3 worldNormal : NORMAL;
-				float2 uv : TEXCOORD1;
 				float3 worldTangent: TEXCOORD2;
 				float3 worldBinormal: TEXCOORD3;
 			};

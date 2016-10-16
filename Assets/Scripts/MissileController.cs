@@ -5,7 +5,7 @@ public class MissileController : MonoBehaviour {
 
 
 	private GameObject target;
-	private float speed = 35f;
+	private float speed = 10f;
 
 	public void Seek (GameObject _target) {
 	
@@ -15,7 +15,7 @@ public class MissileController : MonoBehaviour {
 	void Update() {
 
 
-		if (target ==null) {
+		if (target == null) {
 
 			Destroy (gameObject);
 			return;
@@ -23,14 +23,16 @@ public class MissileController : MonoBehaviour {
 
 		Vector3 dir = target.transform.position - transform.position;
 		float distanceThisFrame = speed * Time.deltaTime;
-		Debug.Log (distanceThisFrame);
 		if(dir.magnitude <= distanceThisFrame) {
 
 			HitTarget ();
 			return;
 		}
 
-		transform.LookAt (target.transform.position);
+		float step = speed * Time.deltaTime;
+		Vector3 newDir = Vector3.RotateTowards (transform.forward, dir, step, 0.0f);
+		Debug.DrawRay (transform.position, newDir, Color.red);
+		transform.rotation = Quaternion.LookRotation (newDir);
 		transform.Translate (dir.normalized * distanceThisFrame, Space.World);
 	}
 

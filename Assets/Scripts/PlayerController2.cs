@@ -21,7 +21,7 @@ public class PlayerController2 : MonoBehaviour {
 
 		if(Input.GetKeyDown(KeyCode.Space)){
 
-			LaunchMissile ();
+
 		}
 	}
 
@@ -34,20 +34,5 @@ public class PlayerController2 : MonoBehaviour {
 		motor.movePlayer (moveVec);
 
 	}
-
-
-	void LaunchMissile() {
-
-		Debug.Log ("Fired!");
-		GameObject target = GameObject.FindGameObjectWithTag ("Player");
-		GameObject missileGO = (GameObject) Instantiate (missile, new Vector3(0, 100, 0), Quaternion.identity); 
-
-		MissileController mc = missileGO.GetComponent<MissileController> ();
-
-		if(mc != null) {
-			
-			mc.Seek(target);
-		}
-			
-	}
+		
 }
