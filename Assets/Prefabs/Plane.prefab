@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 494596}
   - 33: {fileID: 3361574}
   - 64: {fileID: 6408640}
-  - 23: {fileID: 2333140}
+  - 114: {fileID: 11441974}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -31,32 +31,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
---- !u!23 &2333140
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 155012}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
-  m_SubsetIndices: 
-  m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
-  m_ProbeAnchor: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 1
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingOrder: 0
 --- !u!33 &3361574
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -76,6 +50,24 @@ MeshCollider:
   serializedVersion: 2
   m_Convex: 0
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11441974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 155012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f44176ba3f8e4895b8b431a17ba3f7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shader: {fileID: 4800000, guid: 0866fbdae0c1d468b978d5486fd60ea3, type: 3}
+  sand: {fileID: 2800000, guid: cbe9868f9582442c1a0e0d93072b511e, type: 3}
+  normalMap: {fileID: 2800000, guid: 9877f976b60cf4d3884d26a75cb4fc24, type: 3}
+  pointLight: {fileID: 11402428, guid: b0b498342432343098c6b4acd0db3407, type: 2}
+  _Kd: 1
+  _Ka: 1
+  _Ks: 1
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
