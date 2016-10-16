@@ -62,8 +62,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 0866fbdae0c1d468b978d5486fd60ea3, type: 3}
-  sand: {fileID: 2800000, guid: 638388742f60da143905f2f717fb840b, type: 3}
-  normalMap: {fileID: 2800000, guid: 90e2d8d3e500bd94db2222012003b5b6, type: 3}
+  sand: {fileID: 2800000, guid: a6b895baddf094b4dbfb714570eec571, type: 3}
+  normalMap: {fileID: 2800000, guid: 46add4f003496074e8039c36a949a73e, type: 3}
   pointLight: {fileID: 11402428, guid: b0b498342432343098c6b4acd0db3407, type: 2}
   _Kd: 1
   _Ka: 0.5
