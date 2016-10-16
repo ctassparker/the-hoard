@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour {
 
 	private void SpawnZombies(int zombCount) {
 
-		InvokeRepeating ("Spawn", 0.0f, 2.0f);
+		InvokeRepeating ("Spawn", 0.0f, 1.0f);
 	}
 
 	private Vector3 GetRandomPosition() {
