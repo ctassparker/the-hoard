@@ -1,10 +1,12 @@
 fileFormatVersion: 2
 guid: be851dbe2f2874909ad72d224d071951
-timeCreated: 1476644535
+timeCreated: 1476745186
 licenseType: Free
 MonoImporter:
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - zombie: {fileID: 1000011473221674, guid: dea9758948d1d4073a24526389cc86f3, type: 2}
+  - player: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
