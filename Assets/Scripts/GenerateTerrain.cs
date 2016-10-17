@@ -3,7 +3,7 @@ using System.Collections;
 
 public class GenerateTerrain : MonoBehaviour {
 
-	private int heightScale = 3;
+	private int heightScale = 2;
 	float detailScale = 5.0f;
 	public Shader shader;
 

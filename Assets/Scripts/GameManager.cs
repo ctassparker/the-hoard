@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour {
 
 	private void Spawn() {
 		Instantiate (zombie, GetRandomPosition (), Quaternion.identity);
+
 	}
 
 }

@@ -7,7 +7,12 @@ public class SmoothCameraFollow : MonoBehaviour {
 
 	private bool smooth = true;
 	private float smoothSpeed = 0.1f;
-	private Vector3 offset = new Vector3 (0f, 25f, -30f);
+	private Vector3 offset = new Vector3 (0f, 20f, -20f);
+
+	void Start() {
+
+		this.transform.eulerAngles = new Vector3 (45, 0, 0);
+	}
 
 	private void LateUpdate() {
 	

@@ -11,7 +11,7 @@ public class WeaponController : MonoBehaviour {
 	private bool canFire = true;
 
 	private float fireRate = 100f;
-	private float refreshCountdown = 10f;
+	private float refreshCountdown = 20f;
 
 	void Update() {
 
@@ -27,7 +27,7 @@ public class WeaponController : MonoBehaviour {
 		refreshCountdown -= Time.deltaTime * fireRate;
 
 		if (refreshCountdown <= 0) {
-			refreshCountdown = 10f;
+			refreshCountdown = 20f;
 			canFire = true;
 		}
 			

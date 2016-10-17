@@ -11,6 +11,7 @@ GameObject:
   - 33: {fileID: 3335638}
   - 136: {fileID: 13652238}
   - 23: {fileID: 2337806}
+  - 114: {fileID: 11435032}
   m_Layer: 0
   m_Name: Zombie
   m_TagString: Zombie
@@ -64,6 +65,17 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 112784}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &11435032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 112784}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 129a110515ac043a08d5d83cdffc1436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &13652238
 CapsuleCollider:
   m_ObjectHideFlags: 1

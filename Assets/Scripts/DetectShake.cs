@@ -36,6 +36,11 @@ public class DetectShake : MonoBehaviour {
 			Debug.Log ("SHAAAAAAAAAAAAAAAAKE!!!!!");
 		}
 
+		if(Input.GetKeyDown(KeyCode.Space)) {
+			StartCoroutine ("DropMissiles");
+
+		}
+
 	}
 
 	IEnumerator DropMissiles() {
