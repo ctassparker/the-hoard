@@ -144,7 +144,7 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.18382353, g: 0.035571557, b: 0.032439444, a: 0.209}
+        second: {r: 0.18382353, g: 0.035571557, b: 0.032439444, a: 0.05882353}
       data:
         first:
           name: _Player_Pos

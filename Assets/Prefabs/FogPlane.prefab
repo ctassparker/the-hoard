@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c88ab410f9868427f9ae7920a8a060ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  fogPlane: {fileID: 138220}
   player: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:

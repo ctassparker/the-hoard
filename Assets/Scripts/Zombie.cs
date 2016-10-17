@@ -5,7 +5,9 @@ public class Zombie : MonoBehaviour {
 
 
 	private GameObject target;
-	private float speed = 3f;
+	private float speed = 1.5f;
+	private float damage = 20f;
+	private bool canAttack = true;
 
 	public void Seek (GameObject _target) {
 
@@ -27,7 +29,7 @@ public class Zombie : MonoBehaviour {
 
 		Vector3 dir = target.transform.position - transform.position;
 		float distanceThisFrame = speed * Time.deltaTime;
-		if (dir.magnitude <= distanceThisFrame) {
+		if (dir.magnitude <= distanceThisFrame && canAttack) {
 
 			HitTarget ();
 			return;
@@ -42,14 +44,17 @@ public class Zombie : MonoBehaviour {
 
 	void HitTarget() {
 
-		Debug.Log ("We Hit Something");
-		Destroy (this.gameObject);
-		Destroy (target);
+		Debug.Log ("We Hit player");
+		target.GetComponent<HealthManager> ().TakeDamage (damage);
+		canAttack = false;
+		StartCoroutine("AttackCountdown");
 	}
 
-	void ChasePlayer () {
-
-
+	IEnumerator AttackCountdown() {
+	
+		yield return new WaitForSeconds (0.5f);
+		canAttack = true;
 	}
+
 
 }

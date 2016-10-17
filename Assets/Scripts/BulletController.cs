@@ -4,7 +4,7 @@ using System.Collections;
 public class BulletController : MonoBehaviour {
 
 	private float bulletSpeed = 75f;
-	public PlayerMotor2 motor;
+	private float bulletDamage = 50f;
 
 	// Use this for initialization
 	void Start () {
@@ -21,5 +21,14 @@ public class BulletController : MonoBehaviour {
 
 		yield return new WaitForSeconds (1);
 		Destroy (gameObject);
+	}
+
+	void OnCollisionEnter(Collision col) {
+		if(col.gameObject.tag == "Zombie") {
+			Debug.Log ("Zombie shot!");
+			col.gameObject.GetComponent<HealthManager>().TakeDamage(bulletDamage);
+		}
+		Destroy (gameObject);
+
 	}
 }

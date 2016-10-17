@@ -11,7 +11,7 @@ public class WeaponController : MonoBehaviour {
 	private bool canFire = true;
 
 	private float fireRate = 100f;
-	private float refreshCountdown = 20f;
+	private float refreshCountdown = 10f;
 
 	void Update() {
 
@@ -36,6 +36,7 @@ public class WeaponController : MonoBehaviour {
 	public void Shoot() {
 
 		if (canFire) {
+			Debug.Log ("Bullet fired at:" + firePoint.position + firePoint.rotation.eulerAngles);
 			Instantiate (bulletPrefab, firePoint.position, firePoint.localRotation);
 			canFire = false;
 		}
