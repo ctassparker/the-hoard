@@ -42,17 +42,20 @@ MeshRenderer:
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: aeac5a150d7a94ec88cb82834143a37c, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
-  m_UseLightProbes: 1
-  m_ReflectionProbeUsage: 1
   m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
   m_PreserveUVs: 1
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
+  m_SelectedWireframeHidden: 0
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -92,7 +95,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7d61fd1124cc49bf9f1af3cf7f3c796, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  motor: {fileID: 11413850, guid: cfd65a228e3d24faea2274d2927dadcb, type: 2}
 --- !u!135 &13599194
 SphereCollider:
   m_ObjectHideFlags: 1
