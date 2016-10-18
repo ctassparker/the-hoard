@@ -47,14 +47,14 @@ public class Zombie : MonoBehaviour {
 		Debug.Log ("We Hit player");
 		target.GetComponent<HealthManager> ().TakeDamage (damage);
 		canAttack = false;
-		// this.gameObject.GetComponent<ZombieAnimator>().isAttacking = true; 
+		this.gameObject.GetComponent<ZombieAnimator>().isAttacking = true; 
 		StartCoroutine("AttackCountdown");
 	}
 
 	IEnumerator AttackCountdown() {
 	
 		yield return new WaitForSeconds (0.5f);
-		// this.gameObject.GetComponent<ZombieAnimator>().isAttacking = false; 
+		this.gameObject.GetComponent<ZombieAnimator>().isAttacking = false; 
 		canAttack = true;
 	}
 

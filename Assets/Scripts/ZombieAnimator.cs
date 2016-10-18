@@ -6,7 +6,7 @@ public class ZombieAnimator : MonoBehaviour
     Animator anim;
     int attackHash = Animator.StringToHash("attack");
     int walkStateHash = Animator.StringToHash("walk");
-    // public bool isAttacking = false; 
+    public bool isAttacking = false; 
 
     void Start ()
     {
@@ -19,10 +19,10 @@ public class ZombieAnimator : MonoBehaviour
         // float move = Input.GetAxis ("Vertical");
         // anim.SetFloat("Forward", move);
 
-        // AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
-        // if(isAttacking && stateInfo.nameHash == runStateHash)
-        // {
-        //     anim.SetTrigger (attackHash);
-        // }
+        AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+        if(isAttacking && stateInfo.nameHash == walkStateHash)
+        {
+            anim.SetTrigger (attackHash);
+        }
     }
 }
