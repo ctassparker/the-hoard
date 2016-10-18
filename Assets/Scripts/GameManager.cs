@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour {
 	private Vector3 GetRandomPosition() {
 
 		Vector3 randomPoint = Random.insideUnitSphere * 40;
-		randomPoint.y = 3.0f;
+		randomPoint.y = 0.0f;
 
 		return player.transform.position + randomPoint;
 	}
