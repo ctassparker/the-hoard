@@ -1,4 +1,6 @@
-﻿Shader "Custom/FogShader" {
+﻿// Upgrade NOTE: replaced '_Object2World' with 'unity_ObjectToWorld'
+
+Shader "Custom/FogShader" {
 	Properties {
 		_Color ("Main Color", Color) = (1,1,1,1)
 		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
@@ -34,7 +36,7 @@
 
 		void vert(inout appdata_full vertexData, out Input outData) {
 			float4 pos = mul(UNITY_MATRIX_MVP, vertexData.vertex);
-			float4 posWorld = mul(_Object2World, vertexData.vertex);
+			float4 posWorld = mul(unity_ObjectToWorld, vertexData.vertex);
 			outData.uv_MainTex = vertexData.texcoord;
 			outData.location = posWorld.xz;
 		}
