@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.SceneManagement;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
@@ -29,5 +30,11 @@ public class GameManager : MonoBehaviour {
 		Instantiate (zombie, GetRandomPosition (), Quaternion.identity);
 
 	}
+
+    void Update() {
+        if (this.player == null) {
+            SceneManager.LoadScene(0);
+        }
+    }
 
 }

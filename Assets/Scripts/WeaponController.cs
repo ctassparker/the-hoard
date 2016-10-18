@@ -37,7 +37,7 @@ public class WeaponController : MonoBehaviour {
 
 		if (canFire) {
 			Debug.Log ("Bullet fired at:" + firePoint.position + firePoint.rotation.eulerAngles);
-			Instantiate (bulletPrefab, firePoint.position, firePoint.localRotation);
+			Instantiate (bulletPrefab, firePoint.position, firePoint.rotation);
 			canFire = false;
 		}
 	}

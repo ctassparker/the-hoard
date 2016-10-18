@@ -14,7 +14,7 @@ public class BulletController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-		transform.Translate(transform.forward * bulletSpeed * Time.deltaTime);
+		transform.position += transform.forward * bulletSpeed * Time.deltaTime;
 	}
 
 	IEnumerator LifeSpan() {

@@ -4,6 +4,7 @@ using System.Collections;
 public class RotateMotor : MonoBehaviour {
 
 	public Joystick rotJoy;
+	public WeaponController gun;
 
 	private float horizontalRotateSpeed = 1.2f;
 	// Use this for initialization
@@ -24,7 +25,9 @@ public class RotateMotor : MonoBehaviour {
 
 			float rotationangle = header * Mathf.Rad2Deg * horizontalRotateSpeed;
 
-			transform.localRotation = Quaternion.Euler (0, rotationangle, 0);
+			transform.rotation = Quaternion.Euler (0, rotationangle, 0);
+
+			gun.Shoot();
 
  		}
 	}
