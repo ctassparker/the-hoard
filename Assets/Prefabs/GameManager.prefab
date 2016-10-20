@@ -42,6 +42,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   zombie: {fileID: 135930, guid: 10e83730c5d91e54d9cc871c67e1a773, type: 2}
   player: {fileID: 177242, guid: 6573dfe3a5648c947b62e4e2f9104f3e, type: 2}
+  roundUI: {fileID: 0}
+  killsUI: {fileID: 0}
+  kills: 0
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

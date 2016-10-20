@@ -4,8 +4,10 @@ using System.Collections;
 public class Zombie : MonoBehaviour {
 
 
+	public GameObject manager;
+
 	private GameObject target;
-	private float speed = 1.5f;
+	private float speed = 2.0f;
 	private float damage = 20f;
 	private bool canAttack = true;
 
@@ -56,5 +58,8 @@ public class Zombie : MonoBehaviour {
 		canAttack = true;
 	}
 
+	void OnDestroy() {
 
+		GameManager.kills++;
+	}
 }

@@ -27,7 +27,6 @@
 
 Shader "Unlit/LandscapeShader"
 {
-
 	SubShader
 	{
 		Pass

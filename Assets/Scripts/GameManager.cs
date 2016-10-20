@@ -1,24 +1,27 @@
 ﻿using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 using System.Collections;
 
 public class GameManager : MonoBehaviour {
 
 	public GameObject zombie;
 	public GameObject player;
+	public GameObject roundUI;
+	public GameObject killsUI;
+	public GameObject missilesUI;
 
-	private float spawnRate = 5;
-	private int spawnCounter = 12;
+	public static int kills = 0;
+	public static int missiles = 5;
+
+	private float spawnRate = 1.0f;
+	private int previousSpawnCount = 5;
+	private int round = 1;
 
 	// Use this for initialization
 	void Start () {
 	
-		SpawnZombies (spawnRate);
-	}
-
-	private void SpawnZombies(float spawnRate) {
-
-		InvokeRepeating ("Spawn", 0.0f, spawnRate);
+		StartCoroutine (SpawnZombie (spawnRate));
 	}
 
 	private Vector3 GetRandomPosition() {
@@ -42,10 +45,33 @@ public class GameManager : MonoBehaviour {
 
 	}
 
+	IEnumerator SpawnZombie(float rate) {
+		int spawnCounter = previousSpawnCount;
+		while (true) {
+			yield return new WaitForSeconds (rate);
+			Debug.Log ("Zombie Spawned");
+			Spawn ();
+			spawnCounter--;
+			if(spawnCounter == 0) {
+				round++;
+				Debug.Log (round);
+				spawnCounter = previousSpawnCount * 2;
+				Debug.Log (spawnCounter);
+				previousSpawnCount = spawnCounter;
+				if(spawnRate > 1.0f) {
+					spawnRate -= 0.5f;
+				}
+			}
+		}
+
+	}
+
     void Update() {
-        if (this.player == null) {
-            SceneManager.LoadScene(0);
-        }
+
+		roundUI.GetComponent<Text> ().text = "Wave :  " + round.ToString();
+		killsUI.GetComponent<Text> ().text = "Kills :  " + kills.ToString();
+		missilesUI.GetComponent<Text> ().text = "Missiles :  " + missiles.ToString ();
+
     }
 
 }

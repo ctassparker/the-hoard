@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class DetectShake : MonoBehaviour {
+public class MissileLauncher : MonoBehaviour {
 
 	public GameObject missile;
 	public GameObject player;
@@ -30,13 +30,13 @@ public class DetectShake : MonoBehaviour {
 		lowPassvalue = Vector3.Lerp (lowPassvalue, acceleration, lowPassFilterFactor);
 		deltaAcceleration = acceleration - lowPassvalue;
 
-		if(deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold && canFire) {
+		if(deltaAcceleration.sqrMagnitude >= shakeDetectionThreshold && canFire && GameManager.missiles > 0) {
 
 			StartCoroutine ("DropMissiles");
 			Debug.Log ("SHAAAAAAAAAAAAAAAAKE!!!!!");
 		}
 
-		if(Input.GetKeyDown(KeyCode.Space)) {
+		if(Input.GetKeyDown(KeyCode.Space) && GameManager.missiles > 0) {
 			StartCoroutine ("DropMissiles");
 
 		}
@@ -46,11 +46,13 @@ public class DetectShake : MonoBehaviour {
 	IEnumerator DropMissiles() {
 		LaunchMissiles ();
 		canFire = false;
-		yield return new WaitForSeconds (2);
+		yield return new WaitForSeconds (10);
 		canFire = true;
 	}
 
 	void LaunchMissiles() {
+
+		GameManager.missiles--;
 
 		Debug.Log ("Launching missiles");
 		GameObject[] targets = GameObject.FindGameObjectsWithTag ("Zombie");

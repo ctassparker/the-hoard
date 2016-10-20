@@ -10,24 +10,24 @@ public class GenerateTerrain : MonoBehaviour {
 	public Texture2D sand;
 	public Texture2D normalMap;
 
-	public PointLight pointLight;
+	public GameObject pointLight;
 
 	public float _Kd= 1;
 	public float _Ka= 1;
 	public float _Ks= 1;
-	// Use this for initialization
+	//Use this for initialization
 	void Start () {
 
 		MeshRenderer renderer = this.gameObject.AddComponent<MeshRenderer>();
-		renderer.material.shader = shader;
-		renderer.material.mainTexture = sand;
-		renderer.material.SetTexture("_NormalMap", normalMap);
-		renderer.receiveShadows = true;
+		renderer.material.shader= shader;
+		//renderer.material.mainTexture = sand;
+		renderer.material.SetTexture ("_NormalMap", normalMap);
+		//renderer.receiveShadows = true;
 
 
 		Mesh mesh = this.GetComponent<MeshFilter> ().mesh;
 		Vector3[] vertices = mesh.vertices;
-
+		Color[] colors = new Color[vertices.Length];
 
 		for (int v = 0; v < vertices.Length; v++) {
 			vertices [v].y = Mathf.PerlinNoise ((vertices [v].x + this.transform.position.x) / detailScale,
@@ -55,8 +55,8 @@ public class GenerateTerrain : MonoBehaviour {
 
 		MeshRenderer renderer = this.GetComponent<MeshRenderer> ();
 
-		renderer.material.SetColor("_PointLightColor", this.pointLight.color);
-		renderer.material.SetVector("_PointLightPosition", this.pointLight.GetWorldPosition());
+		renderer.material.SetColor("_PointLightColor", pointLight.GetComponent<PointLight>().color);
+		renderer.material.SetVector("_PointLightPosition", pointLight.GetComponent<PointLight>().GetWorldPosition());
 
 		renderer.material.SetFloat ("_Kd", this._Kd);
 		renderer.material.SetFloat ("_Ka", this._Ka);

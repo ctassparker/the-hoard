@@ -1367,6 +1367,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129a110515ac043a08d5d83cdffc1436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  manager: {fileID: 158740, guid: ebe8b35aaee0ee24b8ab64b7bf09136c, type: 2}
 --- !u!136 &13653300
 CapsuleCollider:
   m_ObjectHideFlags: 1
