@@ -243,7 +243,6 @@ GameObject:
   - 136: {fileID: 13653300}
   - 114: {fileID: 11405698}
   - 114: {fileID: 11430556}
-  - 114: {fileID: 11436330}
   m_Layer: 0
   m_Name: ZombiePrefab
   m_TagString: Zombie
@@ -1368,18 +1367,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 129a110515ac043a08d5d83cdffc1436, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &11436330
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 135930}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e7ea9a7d9ba07447b8dc93a73121a3eb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAttacking: 0
 --- !u!136 &13653300
 CapsuleCollider:
   m_ObjectHideFlags: 1

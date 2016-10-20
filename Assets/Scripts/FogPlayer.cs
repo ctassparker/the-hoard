@@ -3,20 +3,22 @@ using System.Collections;
 
 public class FogPlayer : MonoBehaviour {
 
-	public GameObject fogPlane;
-	public GameObject player;
+	public Transform fogPlane;
 
-	// Update is called once per frame
-	void Update () {
+	void Start() {
+	
+	}
 
-		Vector3 screenPos = Camera.main.WorldToScreenPoint (player.transform.position);
-		Ray rayToPlayerPos = Camera.main.ScreenPointToRay (screenPos);
+	void Update() {
 
-		int layerMask = (int)(1<<8);
+		Vector3 screePos = Camera.main.WorldToScreenPoint (transform.position);
+
+		Ray rayToPlayerPos = Camera.main.ScreenPointToRay (screePos);
 
 		RaycastHit hit;
-		if (Physics.Raycast (rayToPlayerPos, out hit, 1000, layerMask)) {
-			fogPlane.GetComponent<Renderer> ().sharedMaterial.SetVector ("_Player_Pos", hit.point);
+		if (Physics.Raycast (rayToPlayerPos, out hit, 1000)) {
+		
+			fogPlane.GetComponent<Renderer> ().material.SetVector ("_Player_Pos", hit.point);
 		}
 	}
 }

@@ -2,12 +2,13 @@
 	Properties {
 		_Color ("Main Color", Color) = (1,1,1,1)
 		_MainTex ("Base (RGB) Trans (A)", 2D) = "white" {}
-		_FogRadius ("FogRadius", float) = 1.0
-		_FogMaxRadius ("FogMaxRadius", float) = 1.0
+		_FogRadius ("FogRadius", Float) = 1.0
+		_FogMaxRadius ("FogMaxRadius", Float) = 1.0
 		_Player_Pos ("_Player_Pos", Vector) = (0,0,0,1)
 	}
 	SubShader {
 		Tags {"Queue"="Transparent" "IgnoreProjector"= "True" "RenderType"="Transparent" }
+		Blend SrcAlpha OneMinusSrcAlpha
 		LOD 200
 		Cull off
 		
@@ -15,15 +16,11 @@
 		// Physically based Standard lighting model, and enable shadows on all light types
 		#pragma surface surf Standard vertex:vert alpha:blend
 
-		// Use shader model 3.0 target, to get nicer looking lighting
-		#pragma target 3.0
-
-
 		sampler2D _MainTex;
 		fixed4 _Color;
 		float _FogRadius; 
 		float _FogMaxRadius; 
-		float _Player_Pos;
+		float4 _Player_Pos;
 
 		struct Input {
 			float2 uv_MainTex;

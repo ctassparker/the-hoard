@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 458534}
   - 33: {fileID: 3335560}
   - 23: {fileID: 2341288}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: default
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -27,7 +27,7 @@ GameObject:
   - 4: {fileID: 467278}
   - 136: {fileID: 13620014}
   - 114: {fileID: 11457040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AGM-114HellFire (1)
   m_TagString: Missile
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - 4: {fileID: 428656}
   - 198: {fileID: 19856694}
   - 199: {fileID: 19998482}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WhiteSmokeTrail
   m_TagString: Untagged
   m_Icon: {fileID: 0}

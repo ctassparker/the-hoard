@@ -4,9 +4,9 @@ using System.Collections;
 public class DetectShake : MonoBehaviour {
 
 	public GameObject missile;
+	public GameObject player;
 
 	private bool canFire;
-	private Vector3 offset = new Vector3 (0f, 30f, 0f);
 
 	private float accelerometerUpdateInterval = 1 / 60;
 	private float lowPassKernelWidthSeconds = 1.0f;
@@ -56,18 +56,23 @@ public class DetectShake : MonoBehaviour {
 		GameObject[] targets = GameObject.FindGameObjectsWithTag ("Zombie");
 
 		foreach(GameObject target in targets) {
+			Vector3 offset = new Vector3 (Random.Range(-20f, 20f), Random.Range(20f, 30f), Random.Range(-20f, 20f));
+
 			Debug.Log ("missile launched");
-			Vector3 pos = target.transform.position + offset;
 
-			Debug.Log ("target " + target.transform.position + " missile: " + pos);
+			if (Vector3.Distance (target.transform.position, player.transform.position) < 20) {
+				Vector3 pos = target.transform.position + offset;
 
-			GameObject missileGO = (GameObject) Instantiate (missile, pos, Quaternion.identity); 
+				Debug.Log ("target " + target.transform.position + " missile: " + pos);
 
-			MissileController mc = missileGO.GetComponent<MissileController> ();
+				GameObject missileGO = (GameObject)Instantiate (missile, pos, Quaternion.identity); 
 
-			if(mc != null) {
+				MissileController mc = missileGO.GetComponent<MissileController> ();
 
-				mc.Seek(target);
+				if (mc != null) {
+
+					mc.Seek (target);
+				}
 			}
 		}
 	}

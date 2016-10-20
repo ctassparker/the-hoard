@@ -22,11 +22,11 @@ public class GenerateTerrain : MonoBehaviour {
 		renderer.material.shader = shader;
 		renderer.material.mainTexture = sand;
 		renderer.material.SetTexture("_NormalMap", normalMap);
+		renderer.receiveShadows = true;
 
 
 		Mesh mesh = this.GetComponent<MeshFilter> ().mesh;
 		Vector3[] vertices = mesh.vertices;
-		Color[] colors = new Color[vertices.Length];
 
 
 		for (int v = 0; v < vertices.Length; v++) {
@@ -44,7 +44,6 @@ public class GenerateTerrain : MonoBehaviour {
 
 
 		mesh.uv = uvs;
-		mesh.colors = colors;
 		mesh.RecalculateBounds ();
 		mesh.RecalculateNormals ();
 		TangentSolver(mesh);

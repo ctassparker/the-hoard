@@ -10,6 +10,7 @@ GameObject:
   - 4: {fileID: 422920}
   - 108: {fileID: 10829698}
   - 114: {fileID: 11402428}
+  - 114: {fileID: 11442678}
   m_Layer: 0
   m_Name: Point light
   m_TagString: Untagged
@@ -45,7 +46,7 @@ Light:
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 0
+    m_Type: 2
     m_Resolution: -1
     m_Strength: 1
     m_Bias: 0.05
@@ -74,7 +75,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 156d4625132524403bcea3fb4026a2e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  color: {r: 0.9935091, g: 1, b: 0.88235295, a: 0.516}
+  color: {r: 0.9894523, g: 1, b: 0.8088235, a: 1}
+--- !u!114 &11442678
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 108920}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bbf112bd756c4c0ebafc3012d25f226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveJoy: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

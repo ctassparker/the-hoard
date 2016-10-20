@@ -7,12 +7,11 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: FogMaterial
-  m_Shader: {fileID: 4800000, guid: 1b4581055adde430aab241c4a54e9e7c, type: 3}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
+  m_Shader: {fileID: 4800000, guid: ba998857e39fd454093eeb458aa847cd, type: 3}
+  m_ShaderKeywords: 
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
-  stringTagMap:
-    RenderType: Transparent
+  stringTagMap: {}
   m_SavedProperties:
     serializedVersion: 2
     m_TexEnvs:
@@ -87,7 +86,7 @@ Material:
       data:
         first:
           name: _DstBlend
-        second: 10
+        second: 0
       data:
         first:
           name: _Cutoff
@@ -99,7 +98,7 @@ Material:
       data:
         first:
           name: _ZWrite
-        second: 0
+        second: 1
       data:
         first:
           name: _Glossiness
@@ -123,7 +122,7 @@ Material:
       data:
         first:
           name: _Mode
-        second: 3
+        second: 0
       data:
         first:
           name: _Metallic
@@ -131,11 +130,11 @@ Material:
       data:
         first:
           name: _FogRadius
-        second: 30
+        second: 25
       data:
         first:
           name: _FogMaxRadius
-        second: 0.5
+        second: 0.3
     m_Colors:
       data:
         first:
@@ -144,8 +143,8 @@ Material:
       data:
         first:
           name: _Color
-        second: {r: 0.18382353, g: 0.035571557, b: 0.032439444, a: 0.05882353}
+        second: {r: 0.03137255, g: 0.08235294, b: 0.2, a: 0}
       data:
         first:
           name: _Player_Pos
-        second: {r: 17.471346, g: 2.9999218, b: -21.249237, a: 0}
+        second: {r: 0, g: 0, b: 0, a: 1}
