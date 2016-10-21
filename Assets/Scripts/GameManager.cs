@@ -10,17 +10,18 @@ public class GameManager : MonoBehaviour {
 	public GameObject roundUI;
 	public GameObject killsUI;
 	public GameObject missilesUI;
+	public GameObject deathUI;
 
 	public static int kills = 0;
 	public static int missiles = 5;
 
-	private float spawnRate = 1.0f;
+	private float spawnRate = 6.0f;
 	private int previousSpawnCount = 5;
 	private int round = 1;
 
 	// Use this for initialization
 	void Start () {
-	
+		deathUI.SetActive (false);
 		StartCoroutine (SpawnZombie (spawnRate));
 	}
 
@@ -68,10 +69,24 @@ public class GameManager : MonoBehaviour {
 
     void Update() {
 
+		Debug.Log (player.GetComponent<HealthManager>().health);
+
+		if (player.GetComponent<HealthManager> ().health <= 0f) {
+			Time.timeScale = 0;
+			StartCoroutine ("EndGame");
+		}
+
 		roundUI.GetComponent<Text> ().text = "Wave :  " + round.ToString();
 		killsUI.GetComponent<Text> ().text = "Kills :  " + kills.ToString();
 		missilesUI.GetComponent<Text> ().text = "Missiles :  " + missiles.ToString ();
 
     }
+
+	IEnumerator EndGame() {
+
+		deathUI.SetActive (true);
+		yield return new WaitForSeconds (5);
+		SceneManager.LoadScene (0);
+	}
 
 }

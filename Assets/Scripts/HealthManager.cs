@@ -8,7 +8,9 @@ public class HealthManager : MonoBehaviour {
 	void Update() {
 
 		if (this.health <= 0f) {
-			Destroy (gameObject);
+			//if (gameObject.tag == "Zombie") {
+				Destroy (gameObject);
+			//}
 		}
 	}
 	
