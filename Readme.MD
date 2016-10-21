@@ -105,7 +105,7 @@ https://www.youtube.com/watch?v=uSnZuBhOA2U
 Accelerometer input
 http://stackoverflow.com/questions/31389598/how-can-i-detect-a-shake-motion-on-a-mobile-device-using-unity3d-c-sharp
 
-Zombie model
+Zombie model & animations
 http://u3d.as/bFW
 
 Phong Shader
